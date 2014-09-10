@@ -1,5 +1,5 @@
 NathPort::Application.routes.draw do
-    get "welcome" => 'pages#welcome', :as => 'welcome'
+   root :to => 'pages#welcome'
     
     get "about" => 'pages#about', :as => 'about'
   
