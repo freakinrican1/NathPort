@@ -3,10 +3,14 @@
 <h3>
 <%= @blog_entry.content %>
 <br>
-
 <br>
-Is this a draft? <b><%= @blog_entry.draft %></b>
+Length : <%= @blog_entry.relative_length %>
+<br>
+Draft? : <b><%= @blog_entry.draft %></b>
+<br>
+Featured? : <b><%= @blog_entry.featured %></b>
 <br>
 <br>
 <%= link_to("Edit this Project", edit_blog_entry_path(@blog_entry.id)) %>
+<br>
 <%= link_to("All Entries", blog_entries_path) %>
