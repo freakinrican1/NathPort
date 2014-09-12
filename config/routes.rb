@@ -1,7 +1,15 @@
 NathPort::Application.routes.draw do
+    
    root :to => 'pages#welcome'
     
     get "about" => 'pages#about', :as => 'about'
+    
+    post "create_user" => 'users#create', :as => 'create_user'
+    
+    get "signup" => 'users#new', :as => 'signup' 
+    
+    
+    
   
   #----------------------------------------------------------
     

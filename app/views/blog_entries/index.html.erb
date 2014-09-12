@@ -1,4 +1,9 @@
-<h1>Blog Index</h1>
+
+<%= link_to "Sign up for a  new user account." , signup_path%>
+
+
+
+<h1>My Blog</h1>
 
 <% @blog_entries.each do |p| %>
 
@@ -11,3 +16,5 @@
 <br>
 
 <%= link_to("Home", root_path) %>
+
+
