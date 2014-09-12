@@ -1,11 +1,17 @@
 class BlogEntriesController < ApplicationController
   
+  
+  
+  
+  
   def index
     @blog_entries= BlogEntry.all
   end 
   
   def show
+    session[:ip_address] = request.remote_ip
     @blog_entry = BlogEntry.find(params[:id])
+    session[:ip_address] = request.remote_ip
   end
   
   def new 
@@ -37,6 +43,14 @@ class BlogEntriesController < ApplicationController
           render "edit"
         end
       end
+  
+      def like 
+        session[:ip_address] = request.remote_ip
+        @blog_entry = BlogEntry.find(params[:id])
+        @ip_like = Like.create(ip_address:session[:ip_address], blog_entry_id:(params[:id]))
+        @likes = Like.all
+        
+      end 
   
   
 end

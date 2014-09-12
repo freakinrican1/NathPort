@@ -1,5 +1,6 @@
 class BlogEntry < ActiveRecord::Base
   attr_accessible :content, :draft, :title, :featured
+  has_many :likes
   
   validates :title, :presence => true
    validates :content, :presence => true

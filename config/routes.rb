@@ -44,6 +44,8 @@ NathPort::Application.routes.draw do
    put "blog_entries/:id" => 'blog_entries#update' # Notice the path is same as 'show' action's.
  
    get "blog_entries/:id" => 'blog_entries#show', :as => "blog_entry" 
+   
+   get "blog_entries/:id/like" => 'blog_entries#like', :as => "like_page"
     
     
     
